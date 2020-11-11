@@ -2,7 +2,7 @@ import React from 'react';
 
 const pads = "pads";
 
-const DesignPadBodyTrue = props => {
+const DesignPadBodyTrue = () => {
     return ( 
         
         <div>
@@ -31,7 +31,7 @@ const DesignPadBodyTrue = props => {
     );
 }
 
-const DesignPadBodyFalse = props => {
+const DesignPadBodyFalse = () => {
   return ( 
 
       <div>
