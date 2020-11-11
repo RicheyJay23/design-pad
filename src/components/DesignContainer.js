@@ -16,14 +16,7 @@ class DesignContainer extends React.Component {
     };
 
     editButton = event => {
-        // to prevent page reload on form submit
-        // event.preventDefault();
-        /*
-            TODO - Logic for calling props to handle submission and setting state changes
-        */
-        // this.setState(true)
         console.log('current state in edit button event',this.state)
-        // console.log('Im the edit button event')
     }
 
     render() {
