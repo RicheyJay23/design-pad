@@ -15,9 +15,9 @@ class DesignContainer extends React.Component {
         this.setState(prevState => ({ editState: !prevState.editState }));
     };
 
-    editButton = event => {
-        console.log('current state in edit button event',this.state)
-    }
+    // editButton = event => {
+    //     console.log('current state in edit button event',this.state)
+    // }
 
     render() {
         const { editState } = this.state;
