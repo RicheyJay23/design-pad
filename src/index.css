@@ -66,9 +66,23 @@ code {
   /* transition: color 1.0s; */
   background-color: yellow;          
   color: black;
-  letter-spacing: 1px;
-  font-size: 25px;
+  /* letter-spacing: 1px; */
+  /* font-size: 25px; */
 }
+
+.edit_button_altered {
+    transition: all 0.5s;
+    /* transition: color 1.0s; */
+    background-color: yellow;          
+    color: black;
+    font-size: 25px;
+    width: 140PX;
+    height: 60PX;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+  }
 
 
 .button_container {
@@ -80,6 +94,7 @@ code {
 }
 
 .edit_button {
+  transition: all 0.5s;
   background-color: black;
   color:white;
   font-size: 25px;
