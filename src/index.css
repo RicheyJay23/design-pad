@@ -21,6 +21,7 @@ code {
 
 .container {
   /* margin-top: 10%; */
+  transition: all 0.5s;
 }
 
 .header {
@@ -131,6 +132,6 @@ code {
   margin: 1%;
   padding: 20%;
   display: flex;
-  justify-content: center     ;
+  justify-content: center;
   align-items: center; 
 }

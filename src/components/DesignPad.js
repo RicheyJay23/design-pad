@@ -1,40 +1,72 @@
 import React from 'react';
 
-const DesignPadBody = () => {
-    // boilerplate table header functional component
-    return ( 
+const pads = "pads";
 
+const DesignPadBodyTrue = props => {
+    return ( 
+        
         <div>
             <div class="pad_container">
-                <div className="pads" id="pads1" 
-                style={{ backgroundColor: "yellow" }} draggable={true} > 1 </div>
-                <div className="pads" id="pads2"
-                style={{ backgroundColor: "orange" }} draggable={true} > 2 </div>
-                <div className="pads" id="pads3"
-                style={{ backgroundColor: "red" }} draggable={true} > 3 </div>
-                <div className="pads" id="pads4"
-                style={{ backgroundColor: "purple" }} draggable={true} > 4 </div>
-                <div className="pads" id="pads5"
-                style={{ backgroundColor: "blueviolet" }} draggable={true} > 5 </div>
-                <div className="pads" id="pads6"
-                style={{ backgroundColor: "turquoise" }} draggable={true} > 6 </div>
-                <div className="pads" id="pads7"
-                style={{ backgroundColor: "green" }} draggable={true} > 7 </div>
-                <div className="pads" id="pads8"
-                style={{ backgroundColor: "brown" }} draggable={true} > 8 </div>
+
+                <div className={pads} 
+                  style={{ backgroundColor: "yellow" }} draggable={true} > 1 </div>
+                <div className={pads}  
+                  style={{ backgroundColor: "orange" }} draggable={true} > 2 </div>
+                <div className={pads}  
+                  style={{ backgroundColor: "red" }} draggable={true} > 3 </div>
+                <div className={pads}  
+                  style={{ backgroundColor: "purple" }} draggable={true} > 4 </div>
+                <div className={pads} 
+                  style={{ backgroundColor: "blueviolet" }} draggable={true} > 5 </div>
+                <div className={pads}  
+                  style={{ backgroundColor: "turquoise" }} draggable={true} > 6 </div>
+                <div className={pads} 
+                  style={{ backgroundColor: "green" }} draggable={true} > 7 </div>
+                <div className={pads} 
+                  style={{ backgroundColor: "brown" }} draggable={true} > 8 </div>
+
             </div>
         </div>
         
     );
 }
 
+const DesignPadBodyFalse = props => {
+  return ( 
+
+      <div>
+          <div class="pad_container">
+
+
+              <div className={pads}  > 1 </div>
+              <div className={pads}  > 2 </div>
+              <div className={pads}  > 3 </div>
+              <div className={pads}  > 4 </div>
+              <div className={pads}  > 5 </div>
+              <div className={pads}  > 6 </div>
+              <div className={pads}  > 7 </div>
+              <div className={pads}  > 8 </div>
+
+          </div>
+      </div>
+      
+  );
+}
+
+const DesignPadCondition = (props) => {
+
+  const editState = props.editState;
+  if (!editState) {
+    return <DesignPadBodyTrue/>;
+  }
+  return <DesignPadBodyFalse/>;
+}
+
 const DesignPad = (props) => {
-    //const { linkData, removeLink } = props;
-    //{ /*TODO - return <table> component, TableHeader and TableBody  */ }
     return (
 
         <div>
-            <DesignPadBody/>
+            <DesignPadCondition editState={props.editState}/>
         </div>
         
     )

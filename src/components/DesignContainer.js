@@ -15,21 +15,12 @@ class DesignContainer extends React.Component {
         this.setState(prevState => ({ editState: !prevState.editState }));
     };
 
-    // editButton = event => {
-    //     console.log('current state in edit button event',this.state)
-    // }
-
     render() {
         const { editState } = this.state;
         const editButtonState = this.state.editState? "edit_button": "edit_button_altered";
         
         return ( 
             <div className="container">
-
-                {/* Testing feature for edit button */}
-                <div className={`box ${editState ? "" : "hidden"}`}>
-                    <p>{`${editState ? "I'm the box" : "I'm the yellow box"}`}</p>
-                </div>
                 
                 { /*TODO - Add editButton Component */ }
                 <div className="button_container">
@@ -44,7 +35,7 @@ class DesignContainer extends React.Component {
                 <br/> 
                 
                 { /*TODO - Add DesignPad Component */ } 
-                <DesignPad/>
+                <DesignPad editState={this.state.editState}/>
 
                 <br/> 
 
