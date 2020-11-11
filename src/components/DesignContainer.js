@@ -7,12 +7,12 @@ class DesignContainer extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            isBoxVisible: true
+            editState: true
           };
     }
 
-    toggleBox = () => {
-        this.setState(prevState => ({ isBoxVisible: !prevState.isBoxVisible }));
+    toggleEditState = () => {
+        this.setState(prevState => ({ editState: !prevState.editState }));
     };
 
     editButton = event => {
@@ -20,19 +20,19 @@ class DesignContainer extends React.Component {
     }
 
     render() {
-        const { isBoxVisible } = this.state;
+        const { editState } = this.state;
         
         return ( 
             <div className="container">
 
                 {/* Testing feature for edit button */}
-                <div className={`box ${isBoxVisible ? "" : "hidden"}`}>
-                    <p>{`${isBoxVisible ? "I'm the box" : "I'm the yellow box"}`}</p>
+                <div className={`box ${editState ? "" : "hidden"}`}>
+                    <p>{`${editState ? "I'm the box" : "I'm the yellow box"}`}</p>
                 </div>
                 
                 { /*TODO - Add editButton Component */ }
                 <div className="button_container">
-                    <button className={`edit_button ${isBoxVisible ? "" : "hidden"}`} onClick={this.toggleBox}> Edit </button>
+                    <button className={`edit_button ${editState ? "" : "hidden"}`} onClick={this.toggleEditState}> Edit </button>
                 </div>
                 
                 <br/> 
@@ -52,6 +52,43 @@ class DesignContainer extends React.Component {
 
             </div>
         );
+    }
+}
+
+export default DesignContainer;
+
+
+import React from 'react';
+import DesignBoard from './DesignBoard';
+import PadInput from './PadInput';
+
+
+class DesignContainer extends React.Component {
+  state = { EDIT: false };
+
+
+  Edit = () => {
+    this.setState(props => ({
+      EDIT: !props.EDIT 
+    }));
+  };
+    
+
+    render() {
+        const button = this.state.EDIT ? "edit_button" : "edit_button_after";
+        const EDIT = this.state.EDIT
+        return (
+            <div>
+                <div>
+                    <button className={button} onClick={this.Edit}>
+                    EDIT
+                    </button>
+                </div>
+
+                <PadInput EDIT={EDIT} />
+                <DesignBoard />
+            </div>
+    );
     }
 }
 
