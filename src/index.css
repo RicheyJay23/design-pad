@@ -47,10 +47,9 @@ code {
   grid-row-gap: 0.3%; 
 }
 
-.box { 
+.box, .box_altered { 
     /* border: 0.9px solid black; */
-    transition: all 1.5s;
-    /* transition: color 1.0s; */
+    transition: all 0.5s;
     background-color: #80abdf;
     padding: 50px;
     border-radius: 20px;
@@ -125,7 +124,7 @@ code {
   align-items: center; 
 }
 
-.pads {
+.pads, .pads_altered {
   background-color: plum;
   border: 1px solid rgba(0, 0, 0, 0.404);
   color: black;

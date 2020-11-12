@@ -16,7 +16,7 @@ class DesignContainer extends React.Component {
     };
 
     render() {
-        const { editState } = this.state;
+        // const { editState } = this.state;
         const editButtonState = this.state.editState? "edit_button": "edit_button_altered";
         
         return ( 
@@ -30,7 +30,7 @@ class DesignContainer extends React.Component {
                 <br/> 
 
                 { /*TODO - Add PadInput Component */ } 
-                <PadInput/>
+                <PadInput editState={this.state.editState}/>
 
                 <br/> 
                 
@@ -40,7 +40,7 @@ class DesignContainer extends React.Component {
                 <br/> 
 
                 { /*TODO - Add DesignBoard Component */ } 
-                <DesignBoard/>
+                <DesignBoard editState={this.state.editState}/>
 
             </div>
         );
